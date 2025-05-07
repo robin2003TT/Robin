@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huzaifa's Profile</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+        img { width: 150px; height: auto; margin-bottom: 10px; }
+        button { 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            border: none; 
+            background-color: #007bff; 
+            color: white; 
+            cursor: pointer; 
+            margin-top: 15px;
+        }
+        button:hover { background-color: #0056b3; }
+        #content { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <img src="robin.jpeg" alt="Profile Logo">
+    
+    <h1>About Me</h1>
+    <p>Hello! I'm Huzaifa, passionate about game development, especially in Godot. I love refining mechanics to ensure smooth gameplay experiences.</p>
+    
+    <h2>More About Me (from me.txt)</h2>
+    <div id="content">Loading...</div>
+
+    <button onclick="location.href='socials.html'">Socials</button>
+
+    <script>
+        fetch('me.txt')
+            .then(response => response.text())
+            .then(data => document.getElementById('content').innerText = data)
+            .catch(error => document.getElementById('content').innerText = "Error loading file.");
+    </script>
+</body>
+</html>
